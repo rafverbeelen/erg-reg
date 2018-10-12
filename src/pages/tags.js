@@ -8,6 +8,8 @@ import kebabCase from "lodash/kebabCase"
 import Helmet from "react-helmet"
 import { Link, graphql } from "gatsby"
 
+import Layout from '../components/layout'
+
 const TagsPage = ({
   data: {
     allMarkdownRemark: { group },
@@ -16,10 +18,9 @@ const TagsPage = ({
     },
   },
 }) => (
-  <div>
+  <Layout>
     <Helmet title={title} />
     <div>
-      <h1>Tags</h1>
       <ul>
         {group.map(tag => (
           <li key={tag.fieldValue}>
@@ -30,7 +31,7 @@ const TagsPage = ({
         ))}
       </ul>
     </div>
-  </div>
+  </Layout>
 )
 
 TagsPage.propTypes = {

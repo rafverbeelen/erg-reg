@@ -1,7 +1,8 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import Menu from './menu'
 
-const Header = ({ siteTitle }) => (
+const Header = ({ siteTitle, siteDescription }) => (
   <div
     style={{
       background: 'black',
@@ -11,8 +12,9 @@ const Header = ({ siteTitle }) => (
     <div
       style={{
         margin: '0 auto',
-        maxWidth: 960,
+        maxWidth: 640,
         padding: '1.45rem 1.0875rem',
+        textAlign: 'center',
       }}
     >
       <h1 style={{ margin: 0 }}>
@@ -26,6 +28,10 @@ const Header = ({ siteTitle }) => (
           {siteTitle}
         </Link>
       </h1>
+      <p style={{color: 'white'}}>
+        {siteDescription}
+      </p>
+      <Menu />
     </div>
   </div>
 )

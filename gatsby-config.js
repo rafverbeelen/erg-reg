@@ -1,9 +1,19 @@
 module.exports = {
   siteMetadata: {
     title: 'Erg-Reg',
+    description: 'Morocco and the Sahara',
+    author: 'Raf Verbeelen',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
+    {
+    resolve: `gatsby-source-filesystem`,
+    options: {
+      path: `${__dirname}/src/pages`,
+      name: "pages",
+      },
+    },
+    `gatsby-transformer-remark`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -17,13 +27,5 @@ module.exports = {
       },
     },
     'gatsby-plugin-offline',
-    {
-    resolve: `gatsby-source-filesystem`,
-    options: {
-      path: `${__dirname}/src/pages`,
-      name: "pages",
-      },
-    },
-    `gatsby-transformer-remark`,
   ],
 }

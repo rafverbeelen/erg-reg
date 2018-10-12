@@ -4,6 +4,8 @@ import PropTypes from "prop-types"
 // Components
 import { Link, graphql } from "gatsby"
 
+import Layout from '../components/layout'
+
 const Tags = ({ pageContext, data }) => {
   const { tag } = pageContext
   const { edges, totalCount } = data.allMarkdownRemark
@@ -12,6 +14,7 @@ const Tags = ({ pageContext, data }) => {
   } tagged with "${tag}"`
 
   return (
+    <Layout>
     <div>
       <h1>{tagHeader}</h1>
       <ul>
@@ -30,6 +33,7 @@ const Tags = ({ pageContext, data }) => {
             */}
       <Link to="/tags">All tags</Link>
     </div>
+    </Layout>
   )
 }
 
