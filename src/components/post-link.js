@@ -1,5 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
+import ButtonLink from '../components/button-link'
 
 const PostLink = ({ post }) => (
   <div>
@@ -14,6 +15,9 @@ const PostLink = ({ post }) => (
     </h3>
     <h6>{post.frontmatter.date} | {post.timeToRead} min read</h6>
     <p>{post.excerpt}</p>
+    <div>
+    <ButtonLink text='read' link={post.frontmatter.path} />
+    </div>
   </div>
 )
 

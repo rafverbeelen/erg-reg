@@ -13,7 +13,9 @@ const NotesIndex = ({
     .filter(edge => !!edge.node.frontmatter.date) // You can filter your posts based on some criteria
     .map(edge => <PostLink key={edge.node.id} post={edge.node} />)
 
-  return <Layout>{Posts}</Layout>
+  return <Layout>
+          {Posts}
+        </Layout>
 }
 
 export default NotesIndex
@@ -24,7 +26,7 @@ export const pageQuery = graphql`
       edges {
         node {
           id
-          excerpt(pruneLength: 250)
+          excerpt(pruneLength: 280)
           frontmatter {
             date(formatString: "D MMMM YYYY")
             path

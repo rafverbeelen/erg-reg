@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import Menu from './menu'
 
 const Header = ({ siteTitle, siteDescription }) => (
   <div
@@ -17,7 +16,10 @@ const Header = ({ siteTitle, siteDescription }) => (
         textAlign: 'center',
       }}
     >
-      <h1 style={{ margin: 0 }}>
+      <h1
+        style={{
+          marginBottom: '1.0875rem',
+      }}>
         <Link
           to="/"
           style={{
@@ -28,10 +30,13 @@ const Header = ({ siteTitle, siteDescription }) => (
           {siteTitle}
         </Link>
       </h1>
-      <p style={{color: 'white'}}>
+      <p
+        style={{
+          margin: 0,
+          color: 'white',
+        }}>
         {siteDescription}
       </p>
-      <Menu />
     </div>
   </div>
 )

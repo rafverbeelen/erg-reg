@@ -8,15 +8,18 @@ import Layout from '../components/layout'
 
 const Tags = ({ pageContext, data }) => {
   const { tag } = pageContext
+  const tagCapitalized = tag.charAt(0).toUpperCase() + tag.slice(1)
   const { edges, totalCount } = data.allMarkdownRemark
-  const tagHeader = `${totalCount} post${
+  const tagHeader = `${tagCapitalized}`
+  const tagCount = `${totalCount} note${
     totalCount === 1 ? "" : "s"
-  } tagged with "${tag}"`
+  }`
 
   return (
     <Layout>
     <div>
       <h1>{tagHeader}</h1>
+      <h6>{tagCount}</h6>
       <ul>
         {edges.map(({ node }) => {
           const { path, title } = node.frontmatter
@@ -27,11 +30,6 @@ const Tags = ({ pageContext, data }) => {
           )
         })}
       </ul>
-      {/*
-              This links to a page that does not yet exist.
-              We'll come back to it!
-            */}
-      <Link to="/tags">All tags</Link>
     </div>
     </Layout>
   )

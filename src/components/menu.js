@@ -31,11 +31,16 @@ const Menu = () => (
         {data.allMarkdownRemark.group.map(tag => (
           <li key={tag.fieldValue}
           style={{
+            margin: 0,
+            padding: 0,
             display: 'inline',
           }}>
             <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}
             style={{
-              padding: '8px',
+              fontFamily: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif',
+              fontWeight: 'bold',
+              paddingLeft: '4px',
+              paddingRight: '4px',
               color: 'white',
               textDecoration: 'none',
             }}>

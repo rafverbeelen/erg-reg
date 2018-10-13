@@ -2,6 +2,8 @@ import React from "react"
 import { graphql } from "gatsby"
 
 import Layout from '../components/layout'
+import ButtonLink from '../components/button-link'
+import ButtonAnchorLink from '../components/button-anchorlink'
 
 const NoteTemplate = ({ data // this prop will be injected by the GraphQL query below
 }) => {
@@ -9,8 +11,11 @@ const NoteTemplate = ({ data // this prop will be injected by the GraphQL query 
   const { frontmatter, html } = markdownRemark
 
   return (
-    <Layout>
+    <Layout id="top">
       <div className="blog-post-container">
+        <div>
+        <ButtonLink text='notes' link='/' />
+        </div>
         <div className="blog-post">
           <h1>{frontmatter.title}</h1>
           <h6>{frontmatter.date}</h6>
@@ -19,7 +24,13 @@ const NoteTemplate = ({ data // this prop will be injected by the GraphQL query 
             dangerouslySetInnerHTML={{ __html: html }}
           />
         </div>
-      </div>
+        <div
+        style={{
+          textAlign: 'center',
+        }}>
+        <ButtonAnchorLink text='top' link='#top' />
+        </div>
+        </div>
     </Layout>
   )
 }
