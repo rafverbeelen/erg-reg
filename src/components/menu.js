@@ -22,7 +22,10 @@ const Menu = () => (
       }
     `}
     render={data => (
-      <div>
+      <div style={{
+        backgroundColor: 'rgb(253, 246, 227)',
+        textAlign: 'center',
+      }}>
         <ul style={{
           listStyleType: 'none',
           margin: 0,
@@ -37,11 +40,9 @@ const Menu = () => (
           }}>
             <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}
             style={{
-              fontFamily: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif',
-              fontWeight: 'bold',
               paddingLeft: '4px',
               paddingRight: '4px',
-              color: 'white',
+              color: 'rgb(36, 19, 5)',
               textDecoration: 'none',
             }}>
               {tag.fieldValue}

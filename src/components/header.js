@@ -1,43 +1,46 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import Menu from './menu'
 
 const Header = ({ siteTitle, siteDescription }) => (
   <div
     style={{
-      background: 'black',
+      backgroundColor: 'rgb(36, 19, 5)',
       marginBottom: '1.45rem',
+      borderBottom: '1px solid',
     }}
   >
     <div
       style={{
         margin: '0 auto',
         maxWidth: 640,
-        padding: '1.45rem 1.0875rem',
+        padding: '1.0875rem',
         textAlign: 'center',
       }}
     >
-      <h1
+    <Link
+      to="/"
+      style={{
+        color: 'rgb(253, 246, 227)',
+        textDecoration: 'none',
+      }}
+    >
+      <h2
         style={{
           marginBottom: '1.0875rem',
       }}>
-        <Link
-          to="/"
-          style={{
-            color: 'white',
-            textDecoration: 'none',
-          }}
-        >
+
           {siteTitle}
-        </Link>
-      </h1>
+      </h2>
       <p
         style={{
           margin: 0,
-          color: 'white',
         }}>
         {siteDescription}
       </p>
+      </Link>
     </div>
+    <Menu />
   </div>
 )
 

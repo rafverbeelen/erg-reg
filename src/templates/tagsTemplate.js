@@ -9,17 +9,13 @@ import Layout from '../components/layout'
 const Tags = ({ pageContext, data }) => {
   const { tag } = pageContext
   const tagCapitalized = tag.charAt(0).toUpperCase() + tag.slice(1)
-  const { edges, totalCount } = data.allMarkdownRemark
+  const { edges } = data.allMarkdownRemark
   const tagHeader = `${tagCapitalized}`
-  const tagCount = `${totalCount} note${
-    totalCount === 1 ? "" : "s"
-  }`
 
   return (
     <Layout>
     <div>
-      <h1>{tagHeader}</h1>
-      <h6>{tagCount}</h6>
+      <h2>{tagHeader}</h2>
       <ul>
         {edges.map(({ node }) => {
           const { path, title } = node.frontmatter

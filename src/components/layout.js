@@ -33,6 +33,7 @@ const Layout = ({ children }) => (
         </Helmet>
         <div
           style={{
+            backgroundColor: 'rgb(250, 248, 245)',
             minHeight: '100vh',
             display: 'flex',
             flexDirection: 'column',
@@ -41,6 +42,7 @@ const Layout = ({ children }) => (
         <Header siteTitle={data.site.siteMetadata.title} siteDescription={data.site.siteMetadata.description} />
         <div
           style={{
+
             margin: '0 auto',
             maxWidth: 640,
             padding: '0px 1.0875rem 1.45rem',

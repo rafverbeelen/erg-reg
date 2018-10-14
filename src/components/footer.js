@@ -5,24 +5,25 @@ import { faTwitter } from '@fortawesome/free-brands-svg-icons'
 const Footer = ({ siteAuthor }) => (
   <div
     style={{
-      background: 'black',
+
     }}
   >
     <div
       style={{
+        borderTop: '1px solid',
         margin: '0 auto',
         maxWidth: 640,
         padding: '1.45rem 1.0875rem 0',
         textAlign: 'center',
       }}
     >
-      <p style={{color: 'white'}}>
+      <p style={{}}>
         {siteAuthor}
       </p>
       <p>
         <a
           style={{
-            color: 'white',
+            color: 'rgb(36, 19, 5)',
             textDecoration: 'none',
           }} href="https://twitter.com/rafverbeelen">
         <FontAwesomeIcon icon={faTwitter} />
