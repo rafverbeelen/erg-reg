@@ -31,6 +31,21 @@ const Menu = () => (
           margin: 0,
           padding: 0,
         }}>
+        <li
+        style={{
+          margin: 0,
+          padding: 0,
+          display: 'inline',
+        }}>
+          <Link to={`/notes/`}
+          style={{
+            paddingRight: '4px',
+            color: 'rgb(36, 19, 5)',
+            textDecoration: 'none',
+          }}>
+            latest
+          </Link>
+        </li>
         {data.allMarkdownRemark.group.map(tag => (
           <li key={tag.fieldValue}
           style={{
@@ -38,7 +53,7 @@ const Menu = () => (
             padding: 0,
             display: 'inline',
           }}>
-            <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}
+            <Link to={`${kebabCase(tag.fieldValue)}/`}
             style={{
               paddingLeft: '4px',
               paddingRight: '4px',

@@ -14,6 +14,7 @@ const NotesIndex = ({
     .map(edge => <PostLink key={edge.node.id} post={edge.node} />)
 
   return <Layout>
+          <h4>Latest</h4>
           {Posts}
         </Layout>
 }

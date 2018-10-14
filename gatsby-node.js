@@ -53,7 +53,7 @@ exports.createPages = ({ actions, graphql }) => {
    // Make tag pages
    tags.forEach(tag => {
      createPage({
-       path: `/tags/${_.kebabCase(tag)}/`,
+       path: `${_.kebabCase(tag)}/`,
        component: tagsTemplate,
        context: {
          tag,

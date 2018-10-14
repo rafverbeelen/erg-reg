@@ -1,14 +1,11 @@
 ---
-path: "/santa-cruz-de-la-mar-pequena"
-date: "2018-10-12"
-title: "Santa Cruz de la Mar Pequeña"
-tags: ["history", "places"]
+path: "/test-post"
+date: "2018-10-11"
+title: "Test Post"
+tags: ["places"]
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla volutpat quis erat non ornare. Etiam blandit nec diam a congue. Mauris tempus tellus in leo facilisis, et viverra lorem mollis. Pellentesque maximus nunc id eleifend finibus. Integer non vulputate sapien. Sed fermentum mauris nunc, non egestas eros sagittis vitae. In augue augue, interdum ut dapibus at, ultrices vitae nulla. Pellentesque faucibus, sem vel commodo pretium, quam elit elementum ipsum, eget consequat erat enim vel neque. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Duis in sodales nulla, non gravida urna.
-
-![Khnifiss](./khnifiss-boat.jpg)
-*The Khnifiss Lagoon*
 
 Phasellus a pellentesque ante, sed scelerisque nulla. Donec quis tincidunt justo, eu pellentesque est. Aliquam auctor eu orci at tempus. Etiam eleifend sem lorem, vel eleifend lectus consectetur non. In scelerisque, neque vel venenatis varius, risus sem iaculis enim, et cursus neque lacus et mi. Pellentesque eu mi sit amet ligula semper tempus at et enim. Curabitur finibus, ligula sit amet tincidunt pharetra, sapien ipsum facilisis turpis, nec molestie enim leo vel massa. Donec quis massa felis. Sed ac convallis nunc. Vestibulum et neque ut arcu eleifend sagittis ut in diam. Sed luctus elit in metus porttitor mattis.
 

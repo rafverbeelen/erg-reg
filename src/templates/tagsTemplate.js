@@ -1,55 +1,24 @@
 import React from "react"
-import PropTypes from "prop-types"
-
-// Components
-import { Link, graphql } from "gatsby"
-
+import { graphql } from "gatsby"
+import PostLink from "../components/post-link"
 import Layout from '../components/layout'
 
 const Tags = ({ pageContext, data }) => {
+  const { edges } = data.allMarkdownRemark
   const { tag } = pageContext
   const tagCapitalized = tag.charAt(0).toUpperCase() + tag.slice(1)
-  const { edges } = data.allMarkdownRemark
-  const tagHeader = `${tagCapitalized}`
+	const tagHeader = `${tagCapitalized}`
+  const Posts = edges
+    .map(edge => <PostLink key={edge.node.id} post={edge.node} />)
 
   return (
     <Layout>
     <div>
-      <h2>{tagHeader}</h2>
-      <ul>
-        {edges.map(({ node }) => {
-          const { path, title } = node.frontmatter
-          return (
-            <li key={path}>
-              <Link to={path}>{title}</Link>
-            </li>
-          )
-        })}
-      </ul>
+      <h4>{tagHeader}</h4>
+      {Posts}
     </div>
     </Layout>
   )
-}
-
-Tags.propTypes = {
-  pageContext: PropTypes.shape({
-    tag: PropTypes.string.isRequired,
-  }),
-  data: PropTypes.shape({
-    allMarkdownRemark: PropTypes.shape({
-      totalCount: PropTypes.number.isRequired,
-      edges: PropTypes.arrayOf(
-        PropTypes.shape({
-          node: PropTypes.shape({
-            frontmatter: PropTypes.shape({
-              path: PropTypes.string.isRequired,
-              title: PropTypes.string.isRequired,
-            }),
-          }),
-        }).isRequired
-      ),
-    }),
-  }),
 }
 
 export default Tags
@@ -61,13 +30,16 @@ export const pageQuery = graphql`
       sort: { fields: [frontmatter___date], order: DESC }
       filter: { frontmatter: { tags: { in: [$tag] } } }
     ) {
-      totalCount
       edges {
         node {
+  			  id
+          excerpt(pruneLength: 280)
           frontmatter {
-            title
-            path
-          }
+  			  date(formatString: "D MMMM YYYY")
+          title
+          path
+        }
+			  timeToRead
         }
       }
     }
